@@ -11,7 +11,7 @@ Feature:US001 Ziyaretçi olarak, siteye erişim sağlayarak siteyi kullanabilmem
    #DENEN YOLLAR : YENI TESTRUNNER TAG YAPILARAK
    #POM XML TESTNG EKLEYIP XML DENEMEK
    #DRIVER DOSYASINDA FARKLI DENEMELEMER VS
-  Scenario: TC02 Ziyaretci erisim dogrulama testi
+  Scenario: TC02 Ziyaretci farkli browserlarda  erisim dogrulama testi
 
     Given ziyaretci Hauseheaven Url erisim saglar
     Then  zirayetci Hauseheaven Url erisim sagladigini kontrol eder

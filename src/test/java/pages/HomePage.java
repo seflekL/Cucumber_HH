@@ -15,7 +15,8 @@ public class HomePage {
 
     }
     //yeni update levent//
-
+    @FindBy (xpath = "//*[@id=\"navigation\"]/div[2]/ul[1]/li")
+    public List<WebElement>headerList;
 
     @FindBy (xpath = "//h2[normalize-space()='Find By Locations']")
     public WebElement FindByLocations;
