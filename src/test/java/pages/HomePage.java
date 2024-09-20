@@ -14,6 +14,8 @@ public class HomePage {
         PageFactory.initElements(Driver.getDriver(), this);
 
     }
+    @FindBy(xpath = "//*[@class='image-cover hero-banner']")
+    public WebElement homepageBackgroundElemnti;
     //yeni update levent//
     @FindBy (xpath = "//*[@id=\"navigation\"]/div[2]/ul[1]/li")
     public List<WebElement>headerList;

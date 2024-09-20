@@ -42,4 +42,70 @@ Feature:  US_002 Ziyaretçi olarak, ana sayfanın üst bölümündeki menülerin
     And   ziyaretci footer bolumunde iken header bolumununun gorunurlugunu dogrular
     And   ziyaretci taraciyi kapatir
 
-    Scenario: TC08
+    Scenario: TC08 Anasayfa header ogelerine tiklandiginda dogru URL erisim saglama testi
+
+      Given ziyaretci Hauseheaven Url erisim saglar
+      Then ziyaretci Hauseheaven sayfasina erisim sagaladigini dogrular
+      And ziyaretci Header yer alan Listing butonuna tiklar
+      And ziyaretci acilan sayfanin properties oldugunu dogrular
+      And ziyaretci taraciyi kapatir
+
+  Scenario: TC09 Anasayfa header Projects butonuna tiklandiginda dogru URL erisim saglama testi
+
+    Given ziyaretci Hauseheaven Url erisim saglar
+    Then ziyaretci Hauseheaven sayfasina erisim sagaladigini dogrular
+    And ziyaretci Header yer alan Projects butonuna tiklar
+    And ziyaretci acilan sayfanin Projects oldugunu dogrular
+    And ziyaretci taraciyi kapatir
+
+  Scenario: TC10 Anasayfa header Blog butonuna tiklandiginda dogru URL erisim saglama testi
+
+    Given ziyaretci Hauseheaven Url erisim saglar
+    Then ziyaretci Hauseheaven sayfasina erisim sagaladigini dogrular
+    And ziyaretci Header yer alan Blog butonuna tiklar
+    And ziyaretci acilan sayfanin Blog oldugunu dogrular
+    And ziyaretci taraciyi kapatir
+
+  Scenario: TC11 Anasayfa header Agents butonuna tiklandiginda dogru URL erisim saglama testi
+
+    Given ziyaretci Hauseheaven Url erisim saglar
+    Then ziyaretci Hauseheaven sayfasina erisim sagaladigini dogrular
+    And ziyaretci Header yer alan Agents butonuna tiklar
+    And ziyaretci acilan sayfanin Agents oldugunu dogrular
+    And ziyaretci taraciyi kapatir
+
+  Scenario: TC12 Anasayfa header Contact butonuna tiklandiginda dogru URL erisim saglama testi
+
+    Given ziyaretci Hauseheaven Url erisim saglar
+    Then ziyaretci Hauseheaven sayfasina erisim sagaladigini dogrular
+    And ziyaretci Header yer alan Contact butonuna tiklar
+    And ziyaretci acilan sayfanin Contact oldugunu dogrular
+    And ziyaretci taraciyi kapatir
+
+  Scenario: TC13 Anasayfa header Signup butonuna tiklandiginda dogru URL erisim saglama testi
+
+    Given ziyaretci Hauseheaven Url erisim saglar
+    Then ziyaretci Hauseheaven sayfasina erisim sagaladigini dogrular
+    And ziyaretci Header yer alan Signup butonuna tiklar
+    And ziyaretci acilan sayfanin Signup oldugunu dogrular
+    And ziyaretci taraciyi kapatir
+
+
+  Scenario: TC14 Anasayfa header AddProperty butonuna tiklandiginda dogru URL erisim saglama testi
+
+    Given ziyaretci Hauseheaven Url erisim saglar
+    Then ziyaretci Hauseheaven sayfasina erisim sagaladigini dogrular
+    And ziyaretci Header yer alan AddProperty butonuna tiklar
+    And ziyaretci acilan sayfanin AddProperty oldugunu dogrular
+    And ziyaretci taraciyi kapatir
+
+  Scenario: TC15 Anasayfa header SignIn butonuna tiklandiginda dogru URL erisim saglama testi
+
+    Given ziyaretci Hauseheaven Url erisim saglar
+    Then ziyaretci Hauseheaven sayfasina erisim sagaladigini dogrular
+    And ziyaretci Header yer alan SignIN butonuna tiklar
+    And ziyaretci acilan sayfanin SignIN oldugunu dogrular
+    And ziyaretci taraciyi kapatir
+
+
+

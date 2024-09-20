@@ -155,4 +155,113 @@ public class HauseHeavenDefinations {
   public void ziyaretciFooterBolumundeIkenHeaderBolumunununGorunurlugunuDogrular() {
      Assertions.assertTrue(homePage.headerSignUpButonu.isDisplayed());
     }
+
+  @And("ziyaretci Header yer alan Listing butonuna tiklar")
+  public void ziyaretciHeaderYerAlanListingButonunaTiklar() {
+      homePage.listingButonu.click();
+  }
+
+  @And("ziyaretci acilan sayfanin properties oldugunu dogrular")
+  public void ziyaretciAcilanSayfaninPropertiesOldugunuDogrular() {
+      String expectedUrl="https://qa.hauseheaven.com/properties?layout=sidebar";
+      String actualUrl=Driver.getDriver().getCurrentUrl();
+
+  }
+
+  @And("ziyaretci Header yer alan Projects butonuna tiklar")
+  public void ziyaretciHeaderYerAlanProjectsButonunaTiklar() {
+      homePage.projectsButonu.click();
+  }
+
+  @And("ziyaretci acilan sayfanin Projects oldugunu dogrular")
+  public void ziyaretciAcilanSayfaninProjectsOldugunuDogrular() {
+      String expectedUrl="https://qa.hauseheaven.com/projects";
+      String acutalUrl=Driver.getDriver().getCurrentUrl();
+      Assertions.assertEquals(acutalUrl,expectedUrl);
+  }
+
+  @And("ziyaretci Header yer alan Blog butonuna tiklar")
+  public void ziyaretciHeaderYerAlanBlogButonunaTiklar() {
+      homePage.blogButonu.click();
+  }
+
+  @And("ziyaretci acilan sayfanin Blog oldugunu dogrular")
+  public void ziyaretciAcilanSayfaninBlogOldugunuDogrular() {
+    String expectedUrl="https://qa.hauseheaven.com/blog";
+    String acutalUrl=Driver.getDriver().getCurrentUrl();
+    Assertions.assertEquals(acutalUrl,expectedUrl);
+  }
+
+  @And("ziyaretci Header yer alan Agents butonuna tiklar")
+  public void ziyaretciHeaderYerAlanAgentsButonunaTiklar() {
+      homePage.agentsButonu.click();
+  }
+
+  @And("ziyaretci acilan sayfanin Agents oldugunu dogrular")
+  public void ziyaretciAcilanSayfaninAgentsOldugunuDogrular() {
+    String expectedUrl="https://qa.hauseheaven.com/agents";
+    String acutalUrl=Driver.getDriver().getCurrentUrl();
+    Assertions.assertEquals(acutalUrl,expectedUrl);
+
+  }
+
+  @And("ziyaretci Header yer alan Contact butonuna tiklar")
+  public void ziyaretciHeaderYerAlanContactButonunaTiklar() {
+      homePage.contactButonu.click();
+
+  }
+
+  @And("ziyaretci acilan sayfanin Contact oldugunu dogrular")
+  public void ziyaretciAcilanSayfaninContactOldugunuDogrular() {
+    String expectedUrl="https://qa.hauseheaven.com/contact";
+    String acutalUrl=Driver.getDriver().getCurrentUrl();
+    Assertions.assertEquals(acutalUrl,expectedUrl);
+  }
+
+  @And("ziyaretci Header yer alan Signup butonuna tiklar")
+  public void ziyaretciHeaderYerAlanSignupButonunaTiklar() {
+      homePage.signupButonu.click();
+  }
+
+  @And("ziyaretci acilan sayfanin Signup oldugunu dogrular")
+  public void ziyaretciAcilanSayfaninSignupOldugunuDogrular() {
+    String expectedUrl="https://qa.hauseheaven.com/register";
+    String acutalUrl=Driver.getDriver().getCurrentUrl();
+    Assertions.assertEquals(acutalUrl,expectedUrl);
+  }
+
+  @And("ziyaretci Header yer alan AddProperty butonuna tiklar")
+  public void ziyaretciHeaderYerAlanAddPropertyButonunaTiklar() {
+      homePage.addPropertyButonu.click();
+  }
+
+  @And("ziyaretci acilan sayfanin AddProperty oldugunu dogrular")
+  public void ziyaretciAcilanSayfaninAddPropertyOldugunuDogrular() {
+    String expectedUrl="https://qa.hauseheaven.com/login";
+    String acutalUrl=Driver.getDriver().getCurrentUrl();
+    Assertions.assertEquals(acutalUrl,expectedUrl);
+  }
+
+  @And("ziyaretci Header yer alan SignIN butonuna tiklar")
+  public void ziyaretciHeaderYerAlanSignINButonunaTiklar() {
+      homePage.signinButonu.click();
+  }
+
+  @And("ziyaretci acilan sayfanin SignIN oldugunu dogrular")
+  public void ziyaretciAcilanSayfaninSignINOldugunuDogrular() {
+    String expectedUrl="https://qa.hauseheaven.com/login";
+    String acutalUrl=Driver.getDriver().getCurrentUrl();
+    Assertions.assertEquals(acutalUrl,expectedUrl);
+  }
+
+  @And("ziyaretci Anasayfa Body bolumune scroll yapar")
+  public void ziyaretciAnasayfaBodyBolumuneScrollYapar() {
+      ReusableMethods.hover(homePage.sefSearchBoxPropertyTypeDDM);
+  }
+
+
+  @And("ziyaretci Anasayfa Body bolumunde background resmin gorunulugunu test eder")
+  public void ziyaretciAnasayfaBodyBolumundeBackgroundResminGorunulugunuTestEder() {
+      Assertions.assertTrue(homePage.homepageBackgroundElemnti.isDisplayed());
+    }
 }
