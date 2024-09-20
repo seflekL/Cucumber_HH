@@ -28,13 +28,13 @@ public class Hooks {
                 bagimsiz bir dosya olarak gorunur
      */
 
-    @After // her Scenario'dan sonra calisacak
-    public void tearDown(Scenario scenario){
-        final byte[] screenshot=((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
-        if (scenario.isFailed()) {
-            scenario.attach(screenshot, "image/png","screenshots");
-        }
-
-        Driver.quitDriver();
-    }
-}
+  //  @After // her Scenario'dan sonra calisacak
+  //  public void tearDown(Scenario scenario){
+  //      final byte[] screenshot=((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+  //      if (scenario.isFailed()) {
+  //          scenario.attach(screenshot, "image/png","screenshots");
+  //      }
+//
+  //      Driver.quitDriver();
+  //  }
+}//

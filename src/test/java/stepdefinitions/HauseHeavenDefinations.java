@@ -10,6 +10,8 @@ import pages.HomePage;
 import pages.UserDashboard;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
+
 import static utilities.Driver.driver;
 
 
@@ -105,4 +107,52 @@ public class HauseHeavenDefinations {
     Assertions.assertTrue(homePage.signinButonu.isDisplayed());
   }
 
+  @Then("ziyaretci Hauseheaven sayfasina erisim sagaladigini dogrular")
+  public void ziyaretciHauseheavenSayfasinaErisimSagaladiginiDogrular() {
+      String expectedUrl="https://qa.hauseheaven.com/";
+      String actualUrl=Driver.getDriver().getCurrentUrl();
+      Assertions.assertEquals(actualUrl,expectedUrl);
+  }
+
+  @And("ziyaretci Ansayfa da header bolumunde Listing tab tiklar")
+  public void ziyaretciAnsayfaDaHeaderBolumundeListingTabTiklar() {
+      homePage.listingButonu.click();
+  }
+
+  @And("ziyaretci listing sayfasinda oldugunu kontrol eder")
+  public void ziyaretciListingSayfasindaOldugunuKontrolEder() {
+    String expectedUrl="https://qa.hauseheaven.com/properties?layout=sidebar";
+    String actualUrl=Driver.getDriver().getCurrentUrl();
+    Assertions.assertEquals(actualUrl,expectedUrl);
+  }
+
+  @And("ziyaretci Headerda bulunan Home Buttonuna tiklar")
+  public void ziyaretciHeaderdaBulunanHomeButtonunaTiklar() {
+      homePage.homeButonu.click();
+  }
+
+  @And("ziyaretci Hauseheven sayfasina erisim sagladdigini kontrol eder")
+  public void ziyaretciHausehevenSayfasinaErisimSagladdiginiKontrolEder() {
+
+    String expectedUrl="https://qa.hauseheaven.com/";
+    String actualUrl=Driver.getDriver().getCurrentUrl();
+    Assertions.assertEquals(actualUrl,expectedUrl);
+
+  }
+
+  @And("ziyaretci header bolumunde {int} adet oge oldgunu dogrular")
+  public void ziyaretciHeaderBolumundeAdetOgeOldgunuDogrular(int sayi) {
+      Assertions.assertEquals(homePage.headerList.size(),sayi);
+
+  }
+
+  @And("ziyaretci footer bolumene erisim saglar")
+  public void ziyaretciFooterBolumeneErisimSaglar() {
+    ReusableMethods.hover(homePage.SefFooterElementi);
+  }
+
+  @And("ziyaretci footer bolumunde iken header bolumununun gorunurlugunu dogrular")
+  public void ziyaretciFooterBolumundeIkenHeaderBolumunununGorunurlugunuDogrular() {
+     Assertions.assertTrue(homePage.headerSignUpButonu.isDisplayed());
+    }
 }
