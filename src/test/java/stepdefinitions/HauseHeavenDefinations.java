@@ -1,5 +1,7 @@
 package stepdefinitions;
 
+import io.cucumber.java.bs.A;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.jupiter.api.Assertions;
@@ -38,9 +40,69 @@ public class HauseHeavenDefinations {
     }
 
 
-    @Given("ziyaretci Hauseheaven Url'sine EDGE browser ile erisim saglar")
-    public void ziyaretciHauseheavenUrlSineEDGEBrowserIleErisimSaglar() {
-        System.setProperty("browser", "edge");
-        driver.get("https://qa.hauseheaven.com/");
+
+
+    @Then("ziyaretci Anasayfa da headerda yer alan SignIn butonuna tiklar")
+    public void ziyaretciAnasayfaDaHeaderdaYerAlanSignInButonunaTiklar() {
+      homePage.signinButonu.click();
     }
+
+    @And("ziyaretci Login sayfasina erisebildigini kontrol eder")
+    public void ziyaretciLoginSayfasinaErisebildiginiKontrolEder() {
+      String expectedUrl="https://qa.hauseheaven.com/login";
+      String actualUrl=Driver.getDriver().getCurrentUrl();
+      Assertions.assertEquals(actualUrl,expectedUrl);
+    }
+
+    @And("ziyaretci taraciyi kapatir")
+    public void ziyaretciTaraciyiKapatir() {
+      Driver.quitDriver();
+    }
+
+  @Then("ziyaretci Anasayfa da header bolumunde logo oldugunu test eder")
+  public void ziyaretciAnasayfaDaHeaderBolumundeLogoOldugunuTestEder() {
+      Assertions.assertTrue(homePage.hauseheavenlogo.isDisplayed());
+
+  }
+
+  @And("ziyaretci Ansayfa da header bolumunde Home tab'in gorunur oldugunu test eder")
+  public void ziyaretciAnsayfaDaHeaderBolumundeHomeTabInGorunurOldugunuTestEder() {
+    Assertions.assertTrue(homePage.homeButonu.isDisplayed());
+  }
+
+  @And("ziyaretci Ansayfa da header bolumunde Listing tab'in gorunur oldugunu test eder")
+  public void ziyaretciAnsayfaDaHeaderBolumundeListingTabInGorunurOldugunuTestEder() {
+  Assertions.assertTrue(homePage.listingButonu.isDisplayed());
+    }
+
+  @And("ziyaretci Ansayfa da header bolumunde Projets tab'in gorunur oldugunu test eder")
+  public void ziyaretciAnsayfaDaHeaderBolumundeProjetsTabInGorunurOldugunuTestEder() {
+  Assertions.assertTrue(homePage.projectsButonu.isDisplayed());
+    }
+
+  @And("ziyaretci Ansayfa da header bolumunde Blog tab'in gorunur oldugunu test eder")
+  public void ziyaretciAnsayfaDaHeaderBolumundeBlogTabInGorunurOldugunuTestEder() {
+  Assertions.assertTrue(homePage.blogButonu.isDisplayed());
+    }
+
+  @And("ziyaretci Ansayfa da header bolumunde Contact tab'in gorunur oldugunu test eder")
+  public void ziyaretciAnsayfaDaHeaderBolumundeContactTabInGorunurOldugunuTestEder() {
+    Assertions.assertTrue(homePage.contactButonu.isDisplayed());
+    }
+
+  @And("ziyaretci Ansayfa da header bolumunde Signup tab'in gorunur oldugunu test eder")
+  public void ziyaretciAnsayfaDaHeaderBolumundeSignupTabInGorunurOldugunuTestEder() {
+  Assertions.assertTrue(homePage.signupButonu.isDisplayed());
+    }
+
+  @And("ziyaretci Ansayfa da header bolumunde Addproperty tab'in gorunur oldugunu test eder")
+  public void ziyaretciAnsayfaDaHeaderBolumundeAddproperyTabInGorunurOldugunuTestEder() {
+      Assertions.assertTrue(homePage.addPropertyButonu.isDisplayed());
+    }
+
+  @And("ziyaretci Ansayfa da header bolumunde SignIn butonunun gorunur oldugunu test eder")
+  public void ziyaretciAnsayfaDaHeaderBolumundeSignInButonununGorunurOldugunuTestEder() {
+    Assertions.assertTrue(homePage.signinButonu.isDisplayed());
+  }
+
 }
