@@ -14,6 +14,15 @@ public class HomePage {
         PageFactory.initElements(Driver.getDriver(), this);
 
     }
+    @FindBy (xpath = "//*[@class='col-lg-12 col-md-12']")
+    public WebElement goodreviewsbycustomerSlider;
+
+    @FindBy (xpath = "//*[@class='location-property-thumb']")
+    public List<WebElement> findByLocationsList;
+    @FindBy (xpath = "//*[@class='click slick-initialized slick-slider']")
+    public List<WebElement> exploregoodplaceIMGlist;
+    @FindBy (xpath = "//*[@id=\"ismain-homes\"]/div/div[2]/section/div")
+    public List<WebElement>howitworkssubmenulist;
     @FindBy(xpath = "//*[@class='image-cover hero-banner']")
     public WebElement homepageBackgroundElemnti;
     //yeni update levent//
@@ -95,44 +104,6 @@ public class HomePage {
     public WebElement BrowseMoreProperties;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //------------------------------------
-
     // [Hause Heaven] - [Header] Bölümünün elementleri. \\
 
     @FindBy(xpath = "//*[normalize-space(text())='Home']")
@@ -172,12 +143,6 @@ public class HomePage {
 
     @FindBy(xpath = "(//*[normalize-space(text())='Login'])[3]")
     public WebElement loginButonu;
-
-    //İsmail---------/
-
-    //İsmail Son-----/
-
-    //Levent---------/
 
     @FindBy(xpath = "//*[@id=\"frmhomesearch\"]/div[2]/button")
     public WebElement sefUserBodysearchButtonElementi;
@@ -282,9 +247,6 @@ public class HomePage {
     public WebElement seffooterSubscribeConfirmYaziElementi;
 
 
-    //Levent Son-------/
-
-    //Dilek------------/
 
 
     @FindBy (xpath = "(//*[@class='prt-link-detail'])[1]")
@@ -335,17 +297,6 @@ public class HomePage {
     @FindBy (xpath = "//*[@class='active']")
     public WebElement dashboardButonu;
 
-
-
-
-
-
-
-
-
-    //Dilek Son--------/
-
-    //Mustafa İsmail---/
 
     @FindBy(xpath = "//*[@class=\"img-fluid mx-auto\"]")
     public WebElement agentsPhotoElementList;
@@ -410,9 +361,7 @@ public class HomePage {
     @FindBy (xpath = "//*[@class='ipt-title']")
     public WebElement agentsDetailPageTitleLinki;
 
-    //Mustafa İsmail Son/
 
-    //Rana Nur---------/
 
     @FindBy(xpath = "//*[@id='navigation']/div[2]/ul[1]/li[2]")
     public WebElement HomePageListingLink;
@@ -579,13 +528,7 @@ public class HomePage {
     @FindBy (xpath ="//*[@class='contact-message contact-error-message']")
     public WebElement contactSayfasiHataMesaji;
 
-    //Rana Nur Son-----/
 
-    //Bünyamin---------/
-
-    //Bünyamin Son-----/
-
-    //Fatma (FDM)------/
 
     @FindBy(xpath = "//*[@class='image-cover hero-banner']")
     public WebElement buyukResim;

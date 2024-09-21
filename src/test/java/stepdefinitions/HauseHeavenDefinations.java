@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import dev.failsafe.internal.util.Assert;
 import io.cucumber.java.bs.A;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -11,6 +12,10 @@ import pages.UserDashboard;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+
+import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import static utilities.Driver.driver;
 
@@ -264,4 +269,139 @@ public class HauseHeavenDefinations {
   public void ziyaretciAnasayfaBodyBolumundeBackgroundResminGorunulugunuTestEder() {
       Assertions.assertTrue(homePage.homepageBackgroundElemnti.isDisplayed());
     }
+
+  @And("ziyaretci Anasayfa Body bolumunde yer alan HowitWorks sroll yapar")
+  public void ziyaretciAnasayfaBodyBolumundeYerAlanHowitWorksSrollYapar() {
+      ReusableMethods.hover(homePage.EvaluateProperty);
+  }
+
+  @And("ziyaretci Anasayfa Body bolumunde EvalateProperty,MeetyourAgent,ClosetheDeal adimlarin yer aldigini test eder")
+  public void ziyaretciAnasayfaBodyBolumundeEvalatePropertyMeetyourAgentClosetheDealAdimlarinYerAldiginiTestEder() {
+    List<String> howitsworksSubMenus =ReusableMethods.getStringList(homePage.howitworkssubmenulist);
+
+    for (String howitsworksSubMenueachlist : howitsworksSubMenus) {
+      System.out.println(howitsworksSubMenueachlist);
+      String expectedContent="how it works?\n" +
+              "get ready to embark on a seamless real estate journey as we guide you through the process from start to finish, ensuring a smooth and rewarding experience.\n" +
+              "evaluate property\n" +
+              "our team will assess the value and condition of your property with precision. this helps us provide a competitive and accurate market price.\n" +
+              "meet your agent\n" +
+              "connect with a dedicated real estate agent who understands your needs and goals. they will guide you through every step of the buying or selling process.\n" +
+              "close the deal\n" +
+              "we’ll handle the final paperwork and negotiations to ensure a smooth transaction. our goal is to make the closing process as seamless and stress-free as possible.";
+      Assertions.assertEquals(expectedContent.toLowerCase(),howitsworksSubMenueachlist.toLowerCase());
+    }
+       }
+
+  @And("ziyaretci Anasayfa Body bolumunde yer alan HowitWorks basligin gorunurlugunu test eder")
+  public void ziyaretciAnasayfaBodyBolumundeYerAlanHowitWorksBasliginGorunurlugunuTestEder() {
+  Assertions.assertTrue(homePage.HowItWorks.isDisplayed());
+    }
+
+  @And("ziyaretci Anasayfa Body bolumunde yer alan ExploreGoodPlaces sroll yapar")
+  public void ziyaretciAnasayfaBodyBolumundeYerAlanExploreGoodPlacesSrollYapar() {
+      ReusableMethods.hover(homePage.exploregoodplaceIMGlist.get(0));
+  }
+
+  @And("ziyaretci ExploreGoodPlaces bolumundeki listinglerin gorunluguunu test eder")
+  public void ziyaretciExploreGoodPlacesBolumundekiListinglerinGorunluguunuTestEder() {
+      List<String>homepageListingList=ReusableMethods.getStringList(homePage.exploregoodplaceIMGlist);
+      Assertions.assertEquals(homepageListingList.size(),6);
+    }
+
+  @And("ziyaretci listing ogelerinde kalp emojisi yer aldigini test eder")
+  public void ziyaretciListingOgelerindeKalpEmojisiYerAldiginiTestEder() {
+      Assertions.assertTrue(homePage.KalpEmoji.isDisplayed());
+
+  }
+
+  @And("ziyaretci herhangi bir listinge tiklandiginda dogru sayfa acildigini test eder")
+  public void ziyaretciHerhangiBirListingeTiklandigindaDogruSayfaAcildiginiTestEder() {
+      homePage.exploregoodplaceIMGlist.get(0).click();
+      String expectedUrl="https://qa.hauseheaven.com/properties/unparalleled-residence-with-forever-central-park-views";
+      String actualUrl=Driver.getDriver().getCurrentUrl();
+      Assertions.assertEquals(actualUrl,expectedUrl);
+  }
+
+  @And("ziyaretci Findbylocation bolumundeki listinglerin gorunluguunu test eder")
+  public void ziyaretciFindbylocationBolumundekiListinglerinGorunluguunuTestEder() {
+    List<String>findbyyListingList=ReusableMethods.getStringList(homePage.findByLocationsList);
+    Assertions.assertEquals(findbyyListingList.size(),8);
+
+  }
+
+  @And("ziyaretci Anasayfa Body bolumunde yer alan Findybylocation sroll yapar")
+  public void ziyaretciAnasayfaBodyBolumundeYerAlanFindybylocationSrollYapar() {
+    ReusableMethods.hover(homePage.findByLocationsList.get(3));
+  }
+
+  @And("ziyaretci Newyork  location tiklandiginda dogru sayfa acildigini test eder")
+  public void ziyaretciNewyorkLocationTiklandigindaDogruSayfaAcildiginiTestEder() {
+
+    homePage.findByLocationsList.get(3).click();
+    String expectedUrl="https://qa.hauseheaven.com/city/new-york";
+    String actualUrl=Driver.getDriver().getCurrentUrl();
+    Assertions.assertEquals(actualUrl,expectedUrl);
+  }
+
+  @And("ziyaretci Anasayfa Body bolumunde yer alan GoodReviewByCusotmer sroll yapar")
+  public void ziyaretciAnasayfaBodyBolumundeYerAlanGoodReviewByCusotmerSrollYapar() {
+      ReusableMethods.hover(homePage.goodreviewsbycustomerSlider);
+
+  }
+
+   @And("Body bolumunde yer alan GoodReviewByCusotmer slider oldugunu test eder")
+  public void bodyBolumundeYerAlanGoodReviewByCusotmerSliderOldugunuTestEder() {
+Assertions.assertTrue(homePage.goodreviewsbycustomerSlider.isDisplayed());
+  }
+
+  @And("ziyaretci Anasayfa Body bolumunde yer SeeOurPackages sroll yapar")
+  public void ziyaretciAnasayfaBodyBolumundeYerSeeOurPackagesSrollYapar() {
+      ReusableMethods.hover(homePage.SeeOurPackages);
+  }
+
+  @And("Body bolumunde SeeOurPackeges paketlerin yer aldigini kontrol eder")
+  public void bodyBolumundeSeeOurPackegesPaketlerinYerAldiginiKontrolEder() {
+      List<String>seeourpackageList=ReusableMethods.getStringList(homePage.PostPlanList);
+    System.out.println(seeourpackageList);
+      Assertions.assertEquals(seeourpackageList.size(),3);
+
+  }
+
+  @And("Body bolumunde SeeOurPackeges paketlerinde choose plan butonu oldgunu kontrol eder")
+  public void bodyBolumundeSeeOurPackegesPaketlerindeChoosePlanButonuOldgunuKontrolEder() {
+      Assertions.assertTrue(homePage.ChoosePlan.isDisplayed());
+  }
+
+  @And("ziyaretci konum arama kutusuna tiklar")
+  public void ziyaretciKonumAramaKutusunaTiklar() {
+    homePage.sefUsercookies.click();
+    homePage.sefUserSearhforloactionboxElementi.click();
+
+  }
+
+
+  @And("ziyaretci sonucun aradigi ulke veya sehir oldugunu dogrular")
+  public void ziyaretciSonucunAradigiUlkeVeyaSehirOldugunuDogrular() {
+    List <String> searchedResultList=ReusableMethods.getElementsText(userDashboard.sefUsersearchedList);
+    String aranacakKelime="Miami";
+    System.out.println(searchedResultList);
+    Assertions.assertTrue(searchedResultList.contains("Miami"));
+  }
+
+  @And("ziyaretci arama kutusuna aradigi sehir ulke isiminin {string} adini yazar")
+  public void ziyaretciAramaKutusunaAradigiSehirUlkeIsimininAdiniYazar(String sehirUlkeisim) {
+    homePage.sefUserSearhforloactionboxElementi.sendKeys(sehirUlkeisim);
+    ReusableMethods.wait(2);
+    ReusableMethods.getFullScreenshot(Driver.getDriver());
+  }
+
+  @And("ziyaretci arama butonuna basarak arama yapar")
+  public void ziyaretciAramaButonunaBasarakAramaYapar() {
+   ReusableMethods.hover(homePage.sefUserBodysearchButtonElementi);
+    ReusableMethods.wait(2);
+    homePage.sefUserBodysearchButtonElementi.click();
+
+
+  }
 }
