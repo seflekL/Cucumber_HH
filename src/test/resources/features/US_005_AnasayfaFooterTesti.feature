@@ -190,6 +190,50 @@ Feature: Ziyaretci olarak, ana sayfanın footer bolumundeki öğelerin ve işlev
     And ziyaretci Email adresinin basarali sekilde kaydedilgini dogrular
     And ziyaretci taraciyi kapatir
 
+  Scenario: TC43 ziyaretci  anasayfa footer bolumunde Facebook buton  gorunurluk ve islev testi
+
+    Given ziyaretci Hauseheaven Url erisim saglar
+    Then ziyaretci Hauseheaven sayfasina erisim sagaladigini dogrular
+    And ziyaretci ana sayfa yuklendikten sonra sayfa sonunda yer alan footer bolumune scroll yapar
+    And  ziyaretci footer bolumunde yer alan "FaceBook" logosuna  tiklar
+    And ziyaretci yeni sekmede "Hauseheaven-Facebook" sayfasinin ayri sekmede acildigini kontrol eder
+    And ziyaretci taraciyi kapatir
+
+  Scenario: TC44 ziyaretci  anasayfa footer bolumunde Twitter buton  gorunurluk ve islev testi
+#bug x.com gidiyor
+    Given ziyaretci Hauseheaven Url erisim saglar
+    Then ziyaretci Hauseheaven sayfasina erisim sagaladigini dogrular
+    And ziyaretci ana sayfa yuklendikten sonra sayfa sonunda yer alan footer bolumune scroll yapar
+    And  ziyaretci footer bolumunde yer alan Twitter logosuna  tiklar
+    And ziyaretci yeni sekmede Hauseheaven-Twitter sayfasinin ayri sekmede acildigini kontrol eder
+    And ziyaretci Twitter'in resmi websitesine gittigini onaylar
+    And ziyaretci taraciyi kapatir
+
+  Scenario: TC45 ziyaretci  anasayfa footer bolumunde Instagram buton  gorunurluk ve islev testi
+    Given ziyaretci Hauseheaven Url erisim saglar
+    Then ziyaretci Hauseheaven sayfasina erisim sagaladigini dogrular
+    And ziyaretci ana sayfa yuklendikten sonra sayfa sonunda yer alan footer bolumune scroll yapar
+    And  ziyaretci footer bolumunde yer alan Instagram  logosuna  tiklar
+    And ziyaretci yeni sekmede Hauseheaven-Instagram sayfasinin ayri sekmede acildigini kontrol eder
+    And ziyaretci taraciyi kapatir
+
+  Scenario: TC46 ziyaretci  anasayfa footer bolumunde Linkedin buton  gorunurluk ve islev testi
+    Given ziyaretci Hauseheaven Url erisim saglar
+    Then ziyaretci Hauseheaven sayfasina erisim sagaladigini dogrular
+    And ziyaretci ana sayfa yuklendikten sonra sayfa sonunda yer alan footer bolumune scroll yapar
+    And  ziyaretci footer bolumunde yer alan Linkedin  logosuna  tiklar
+    And ziyaretci yeni sekmede Hauseheaven-Linkedinsayfasinin ayri sekmede acildigini kontrol eder
+    And ziyaretci taraciyi kapatir
+
+  Scenario: TC47 ziyaretci  anasayfa footer bolumunde Pinterest buton  gorunurluk ve islev testi
+    Given ziyaretci Hauseheaven Url erisim saglar
+    Then ziyaretci Hauseheaven sayfasina erisim sagaladigini dogrular
+    And ziyaretci ana sayfa yuklendikten sonra sayfa sonunda yer alan footer bolumune scroll yapar
+    And  ziyaretci footer bolumunde yer alan Pinterest  logosuna  tiklar
+    And ziyaretci yeni sekmede Hauseheaven-Pinterest ayri sekmede acildigini kontrol eder
+    And ziyaretci taraciyi kapatir
+
+
 
 
 
