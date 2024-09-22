@@ -1173,4 +1173,72 @@ public class HauseHeavenDefinations {
     ReusableMethods.wait(4);
     Assertions.assertTrue(homePage.seffooterSubscribeConfirmYaziElementi.isDisplayed());
   }
+
+  @And("ziyaretci footer bolumunde yer alan {string} logosuna  tiklar")
+  public void ziyaretciFooterBolumundeYerAlanLogosunaTiklar(String arg0) {
+    homePage.SeffooterfacebookBoxElementi.click();
+
+  }
+
+  @And("ziyaretci yeni sekmede {string} sayfasinin ayri sekmede acildigini kontrol eder")
+  public void ziyaretciYeniSekmedeSayfasininAyriSekmedeAcildiginiKontrolEder(String arg0) {
+    ReusableMethods.wait(3);
+    LeventMethods.windowsHanldes(2);
+  }
+
+  @And("ziyaretci footer bolumunde yer alan Twitter logosuna  tiklar")
+  public void ziyaretciFooterBolumundeYerAlanTwitterLogosunaTiklar() {
+    homePage.SeftwitterBoxButtonElementi.click();
+
+  }
+
+  @And("ziyaretci yeni sekmede Hauseheaven-Twitter sayfasinin ayri sekmede acildigini kontrol eder")
+  public void ziyaretciYeniSekmedeHauseheavenTwitterSayfasininAyriSekmedeAcildiginiKontrolEder() {
+    LeventMethods.windowsHanldes(2);
+
+  }
+
+  @And("ziyaretci Twitter'in resmi websitesine gittigini onaylar")
+  public void ziyaretciTwitterInResmiWebsitesineGittiginiOnaylar() {
+    String expectedUrL="https://www.twitter.com/";
+    String actualurl=Driver.getDriver().getCurrentUrl();
+    Assertions.assertEquals(actualurl,expectedUrL);
+    ReusableMethods.getFullScreenshot(Driver.getDriver());
+  }
+
+  @And("ziyaretci footer bolumunde yer alan Instagram  logosuna  tiklar")
+  public void ziyaretciFooterBolumundeYerAlanInstagramLogosunaTiklar() {
+    homePage.SefFooterInstagramButtonElementi.click();
+
+  }
+
+  @And("ziyaretci yeni sekmede Hauseheaven-Instagram sayfasinin ayri sekmede acildigini kontrol eder")
+  public void ziyaretciYeniSekmedeHauseheavenInstagramSayfasininAyriSekmedeAcildiginiKontrolEder() {
+    LeventMethods.windowsHanldes(2);
+
+  }
+
+  @And("ziyaretci footer bolumunde yer alan Linkedin  logosuna  tiklar")
+  public void ziyaretciFooterBolumundeYerAlanLinkedinLogosunaTiklar() {
+    homePage.SefFooterLinkedinButtonElementi.click();
+
+  }
+
+  @And("ziyaretci yeni sekmede Hauseheaven-Linkedinsayfasinin ayri sekmede acildigini kontrol eder")
+  public void ziyaretciYeniSekmedeHauseheavenLinkedinsayfasininAyriSekmedeAcildiginiKontrolEder() {
+    LeventMethods.windowsHanldes(2);
+
+  }
+
+  @And("ziyaretci footer bolumunde yer alan Pinterest  logosuna  tiklar")
+  public void ziyaretciFooterBolumundeYerAlanPinterestLogosunaTiklar() {
+    homePage.SefFooterPintestButtonElementi.click();
+
+  }
+
+  @And("ziyaretci yeni sekmede Hauseheaven-Pinterest ayri sekmede acildigini kontrol eder")
+  public void ziyaretciYeniSekmedeHauseheavenPinterestAyriSekmedeAcildiginiKontrolEder() {
+    LeventMethods.windowsHanldes(2);
+
+  }
 }
