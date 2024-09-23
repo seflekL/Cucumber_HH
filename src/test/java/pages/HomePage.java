@@ -845,10 +845,10 @@ public class HomePage {
     @FindBy(xpath = "//h4[normalize-space()='Location']")
     public WebElement listinglocation;
 
+//ISMAIL----------------------
 
 
+//ISMAIL----------------------
 
-
-    //Merve Nur Son----/
 
 }

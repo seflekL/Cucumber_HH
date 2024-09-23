@@ -1240,5 +1240,6 @@ public class HauseHeavenDefinations {
   public void ziyaretciYeniSekmedeHauseheavenPinterestAyriSekmedeAcildiginiKontrolEder() {
     LeventMethods.windowsHanldes(2);
 
+
   }
 }

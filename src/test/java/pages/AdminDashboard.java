@@ -144,21 +144,6 @@ public class AdminDashboard {
     public  WebElement RealEstateEdit;
 
 
-
-
-
-
-
-
-
-
-
-
-
-    //-------------İsmail Kaya Son--------------\\
-
-    //---------------Levent Seflek---------------\\
-
     @FindBy (xpath = "test01")
     public WebElement  seftestelementbuttonuElementi;
 
@@ -248,18 +233,6 @@ public class AdminDashboard {
     public WebElement sefadminDeleteConfirmMsg;
 
 
-
-
-
-
-
-
-
-
-
-    //---------------Levent Seflek Son------------\\
-
-    //---------------Dilek---------------\\
     @FindBy (xpath = "//*[@name='username']")
     public WebElement adminUSerNameKutusu;
 
@@ -345,15 +318,6 @@ public class AdminDashboard {
     public WebElement dilekShovFromYazisi;
 
 
-
-
-
-
-
-    //---------------Dilek Son---------------\\
-
-    //---------------Mustafa İsmail--------------\\
-
     @FindBy (xpath = "(//*[@class='dashboard-stat dashboard-stat-v2 text-white'])[1]")
     public WebElement adminDashboardBodyActivePropertiesLinki;
 
@@ -408,9 +372,6 @@ public class AdminDashboard {
     @FindBy (xpath = "//*[@class='col-md-6 text-end']")
     public WebElement adminDashboardPageLoadLinki;
 
-    //---------------Mustafa İsmail Son---------------\\
-
-    //---------------Rana Nur---------------\\
 
     @FindBy (xpath = "(//*[@class='title'])[7]")
     public WebElement adminNewsletter;
@@ -485,18 +446,6 @@ public class AdminDashboard {
     public WebElement contactSayfasiMesajSIralama10lu;
 
 
-    //---------------Rana Nur Son---------------\\
-
-    //---------------Bünyamin---------------\\
-
-    //---------------Bünyamin Son---------------\\
-
-    //---------------Fatma (FDM)---------------\\
-
-    //---------------Fatma (FDM) Son---------------\\
-
-    //---------------Mehmet Muavviz---------------\\
-
     @FindBy (xpath = "(//*[@class='d-none d-sm-inline'])[1]")
     public WebElement adminViewWebsiteLinki;
 
@@ -521,13 +470,14 @@ public class AdminDashboard {
     @FindBy (xpath = "//*/h3[text()=' New Consults']")
     public WebElement adminDashboardNewConsultsDropdownLinki;
 
-    //---------------Mehmet Muavviz Son---------------\\
-
-    //---------------Merve Nur---------------\\
-
     @FindBy (xpath = "//span[normalize-space()='Consult information']")
     public WebElement adminconsults;
 
-    //---------------Merve Nur Son---------------\\
+
+
+    //ISMAIL---------------------------------------------------------------------------//
+
+    //ISMAIL---------------------------------------------------------------------------//
+
 
 }

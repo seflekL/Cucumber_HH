@@ -1,5 +1,5 @@
 Feature:US001 Ziyaretçi olarak, siteye erişim sağlayarak siteyi kullanabilmem için erişimimin mümkün olmasını istiyorum.
-
+  @E2E
   Scenario: TC01 Ziyaretci erisim dogrulama testi
 
     Given ziyaretci Hauseheaven Url erisim saglar
