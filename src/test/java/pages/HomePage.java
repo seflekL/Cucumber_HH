@@ -14,6 +14,7 @@ public class HomePage {
         PageFactory.initElements(Driver.getDriver(), this);
 
     }
+
     @FindBy (xpath = "//*[@class='col-lg-12 col-md-12']")
     public WebElement goodreviewsbycustomerSlider;
 
@@ -364,7 +365,7 @@ public class HomePage {
 
 
     @FindBy(xpath = "//*[@id='navigation']/div[2]/ul[1]/li[2]")
-    public WebElement HomePageListingLink;
+    public WebElement HomePagelistingLink;
 
     @FindBy(xpath = "//*[@class='ipt-title']")
     public WebElement listingPropertiesYazisi;

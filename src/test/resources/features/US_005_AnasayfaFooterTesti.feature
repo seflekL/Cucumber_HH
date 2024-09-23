@@ -247,3 +247,7 @@ Feature: Ziyaretci olarak, ana sayfanın footer bolumundeki öğelerin ve işlev
 
 
 
+
+
+
+

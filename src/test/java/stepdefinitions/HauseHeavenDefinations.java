@@ -1242,4 +1242,89 @@ public class HauseHeavenDefinations {
 
 
   }
+
+  @And("ziyaretci listing yazisina click yapar")
+  public void ziyaretciListingYazisinaClickYapar() {
+    homePage.HomePagelistingLink.click();
+  }
+
+  @And("ziyaretci listing sayfasina yonlendirildigini dogrular")
+  public void ziyaretciListingSayfasinaYonlendirildiginiDogrular() {
+    String expectedUrl= "https://qa.hauseheaven.com/properties?layout=sidebar";
+    String actualUrl=Driver.getDriver().getCurrentUrl();
+
+    Assertions.assertEquals(expectedUrl,actualUrl);
+
+  }
+
+  @And("ziyaretci yonlendirildigi sayfada mulklerin listelendigini dogrular")
+  public void ziyaretciYonlendirildigiSayfadaMulklerinListelendiginiDogrular() {
+
+    Assertions.assertEquals(userDashboard.listingIMGList.size(),15);
+  }
+
+  @And("ziyaretci listinglerin basliklari oldugunu dogrular")
+  public void ziyaretciListinglerinBasliklariOldugunuDogrular() {
+    Assertions.assertTrue(userDashboard.listingUrunIsim.isDisplayed());
+  }
+
+  @And("ziyaretci listinglerin aciklamasi oldugunu dogrular")
+  public void ziyaretciListinglerinAciklamasiOldugunuDogrular() {
+    int iconsayi=45;
+    Assertions.assertEquals(userDashboard.listingIconsList.size(),iconsayi);
+  }
+
+  @And("ziyaretci listinglerin fiyatlari oldugunu dogrular")
+  public void ziyaretciListinglerinFiyatlariOldugunuDogrular() {
+   List <String> listingFiyatListe=ReusableMethods.getStringList(userDashboard.listingsayfasiFiyatList);
+    for (String fiyatEachElement : listingFiyatListe) {
+      int fiyatdeger=1;
+  int fiyateachelement=Integer.parseInt(fiyatEachElement);
+      Assertions.assertTrue(fiyateachelement>=fiyatdeger);
+    }
+  }
+
+  @And("ziyaretci listinglerin konum bilgisi oldugunu dogrular")
+  public void ziyaretciListinglerinKonumBilgisiOldugunuDogrular() {
+    List<String>locationLists=ReusableMethods.getStringList(userDashboard.listingLoctionsList);
+    for (String locationListeach : locationLists) {
+      Assertions.assertTrue(!locationListeach.isEmpty());
+
+    }
+
+  }
+
+  @And("ziyaretci location tab'ina NewJersey yazar")
+  public void ziyaretciLocationTabInaNewJerseyYazar() {
+    homePage.listingSayfasiSearchForALocationKutusu.sendKeys("New JerseY");
+  }
+
+  @And("ziyaretci city kutusuna click yapar")
+  public void ziyaretciCityKutusunaClickYapar() {
+    homePage.listingSayfasiCityDDM.click();
+    ReusableMethods.bekle(1);
+
+  }
+
+  @And("ziyaretci city kutusunda  Borden Town yazar")
+  public void ziyaretciCityKutusundaBordenTownYazar() {
+    homePage.listingSayfasiCitySearch.sendKeys("Borden Town");
+
+  }
+
+  @And("ziyaretci  FindNewHome butonunua tiklar")
+  public void ziyaretciFindNewHomeButonunuaTiklar() {
+    ReusableMethods.hover(userDashboard.lisingsayfasiFindNewHomeButtonu);
+    ReusableMethods.wait(2);
+    userDashboard.lisingsayfasiFindNewHomeButtonu.click();
+
+
+  }
+
+  @And("ziyaretci Borden Town sehirdeki evlerin listenedigini dogrular")
+  public void ziyaretciBordenTownSehirdekiEvlerinListenediginiDogrular() {
+    System.out.println(userDashboard.listingSonucsayisi.getText());
+    String expectedText="0 Results";
+    Assertions.assertNotEquals(userDashboard.listingSonucsayisi.getText(),expectedText);
+  }
 }
